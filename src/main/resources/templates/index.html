@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header"></head>
+<body>
+<div th:replace="fragments/navigation :: navigation"></div>
+<div class="container">
+    <h3>Создание сайта для покупки билетов в кино</h3>
+    <div class="types">
+        <p>В этом задании вам нужно разработать сайт по покупке билетов в кинотеатр <br>
+            (один кинотеатр, а не сеть, для простоты). Подобные ресурсы имеют много логики. <br>
+            Ваша задача написать только:</p>
+        <p>1. Регистрацию/Вход;<br>
+            2. Вывод киносеансов и фильмов;<br>
+            3. Покупку билетов.
+        </p>
+    </div>
+    <p>
+        <a href="/schedule">
+            <img th:src="@{/images/logo.jpg}" alt="logo" width="200">
+        </a>
+    </p>
+</div>
+<footer th:include="blocks/footer :: footer"></footer>
+</body>
+</html>
