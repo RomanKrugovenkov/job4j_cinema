@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header"></head>
+<body>
+<div th:replace="fragments/navigation :: navigation"></div>
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Номер сеанса</th>
+                <th scope="col">Ряд</th>
+                <th scope="col">Место</th>
+                <th scope="col">Пользователь</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ticket: ${tickets}">
+                <td th:text="${ticket.sessionId}"/>
+                <td th:text="${ticket.rowNumber}"/>
+                <td th:text="${ticket.placeNumber}"/>
+                <td th:text="${ticket.userId}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer th:include="blocks/footer :: footer"></footer>
+</body>
+</html>
