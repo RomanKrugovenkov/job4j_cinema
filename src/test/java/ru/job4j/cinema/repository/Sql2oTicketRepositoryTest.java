@@ -46,6 +46,8 @@ class Sql2oTicketRepositoryTest {
     public void clearAll() {
         sql2o.open().createQuery("DELETE FROM tickets").executeUpdate();
         sql2o.open().createQuery("DELETE FROM film_sessions").executeUpdate();
+        sql2o.open().createQuery("DELETE FROM films").executeUpdate();
+        sql2o.open().createQuery("DELETE FROM halls").executeUpdate();
     }
 
     @Test

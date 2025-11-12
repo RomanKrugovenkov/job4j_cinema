@@ -43,6 +43,8 @@ class Sql2oFilmSessionRepositoryTest {
     @AfterEach
     public void clearVacancies() {
         sql2o.open().createQuery("DELETE FROM film_sessions").executeUpdate();
+        sql2o.open().createQuery("DELETE FROM films").executeUpdate();
+        sql2o.open().createQuery("DELETE FROM halls").executeUpdate();
     }
 
     @Test
