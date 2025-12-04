@@ -1,11 +1,13 @@
 package ru.job4j.cinema.repository;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 import ru.job4j.cinema.model.User;
 
 import java.util.Optional;
 
+@Slf4j
 @Repository
 public class Sql2oUserRepository implements UserRepository {
     private final Sql2o sql2o;
@@ -26,7 +28,7 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generatedId);
             return Optional.ofNullable(user);
         } catch (Exception e) {
-            e.getMessage();
+            log.error(e.getStackTrace().toString());
         }
         return Optional.empty();
     }
